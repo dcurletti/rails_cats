@@ -4,34 +4,37 @@
 
 
 <div id="name">
-  <form id="form_id" action= "<%= action_url %>" method= "POST">
-    <input type="hidden" name="_method" value="<%= form_method %>">
+  <form id="form_id" action= "<%= action_url %>" method= "POST" class="navbar-form">
+    <div id="test" class="form-group">
 
-    <label for="cat_name">Name</label>
-    <input type="text" name="cat[name]" id="cat_name" value="<%= @cat.name %>">
-    <br>
+      <input type="hidden" name="_method" value="<%= form_method %>">
 
-    <label for="cat_sex">Sex</label>
-    <br>
-    <input type="radio" name="cat[sex]" id="cat_sex" value="Male" <%= "checked" if @cat.sex == "Male" %>>Male
-    <br>
-    <input type="radio" name="cat[sex]" id="cat_sex" value="Female" <%= "checked" if @cat.sex == "Female" %>>Female
-    <br>
-    <br>
+      <label for="cat_name">Name</label>
+      <input class="form-control" type="text" name="cat[name]" id="cat_name" value="<%= @cat.name %>">
+      <br>
 
-    <label for="cat_color">Color</label>
-    <input type="text" name="cat[color]" id="cat_color" value="<%= @cat.color %>">
-    <br>
+      <label for="cat_sex">Sex</label>
+      <br>
+      <input type="radio" name="cat[sex]" id="cat_sex" value="Male" <%= "checked" if @cat.sex == "Male" %>>Male
+      <br>
+      <input type="radio" name="cat[sex]" id="cat_sex" value="Female" <%= "checked" if @cat.sex == "Female" %>>Female
+      <br>
+      <br>
 
-    <label for="cat_birth_date">Birth Date</label>
-    <input type="text" name="cat[birth_date]" id="cat_birth_date" value="<%= @cat.birth_date %>">
-    <br>
+      <label for="cat_color">Color</label>
+      <input class="form-control" type="text" name="cat[color]" id="cat_color" value="<%= @cat.color %>">
+      <br>
 
-    <label for="cat_description">Description</label>
-    <textarea name="cat[description]" id="cat_description" value="<%= @cat.description %>">enter description</textarea>
-    <br>
+      <label for="cat_birth_date">Birth Date</label>
+      <input class="form-control" type="text" name="cat[birth_date]" id="cat_birth_date" value="<%= @cat.birth_date %>">
+      <br>
 
-    <input type="submit" value="<%= submit_text %>">
+      <label for="cat_description">Description</label>
+      <textarea class="form-control" name="cat[description]" id="cat_description" value="<%= @cat.description %>">enter description</textarea>
+      <br>
+
+      <input class="btn btn-primary btn-sm btn-block" type="submit" value="<%= submit_text %>">
+    </div>
   </form>
 
 </div>

@@ -1,6 +1,6 @@
 <h1>Cats</h1>
-<div id="cat_table">
-  <table>
+<div class="panel panel-default" id="cat_table">
+  <table class="table">
     <tr>
       <th>Name<th>
       <th>Color<th>
@@ -17,5 +17,9 @@
         <td><%= cat.age %><td>
       </tr>
     <% end %>
-  </table>
+  </table class="table">
+</div>
+
+<div class="create_cat">
+  <a href="<%= new_cat_url %>" class="btn btn-primary btn-lg btn-block">Create New Cat</a>
 </div>

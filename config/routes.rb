@@ -5,4 +5,5 @@ Rails.application.routes.draw do
       get :approve, :deny
     end
   end
+  root to: "cats#index"
 end
