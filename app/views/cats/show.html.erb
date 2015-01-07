@@ -15,3 +15,24 @@
       <td><%= @cat.age %><td>
     </tr>
 </table>
+<br>
+
+<table>
+  <tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Status</th>
+  </tr>
+  <% CatRentalRequest.where(cat_id: @cat.id).each do |request| %>
+    <tr>
+      <td><%= request.start_date %></td>
+      <td><%= request.end_date %></td>
+      <td><%= request.status %></td>
+      <% if request.pending? %>
+        <td><%= button_to "Approve", approve_cat_rental_request_url(request.id), method: :get %></td>
+        <td><%= button_to "Deny", deny_cat_rental_request_url(request.id), method: :get %></td>
+      <% end %>
+    </tr>
+  <% end  %>
+</table>
+<br>
