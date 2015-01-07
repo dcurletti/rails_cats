@@ -20,7 +20,6 @@ class CatsController < ApplicationController
     end
   end
 
-
   def edit
     @cat = Cat.find(params[:id])
   end

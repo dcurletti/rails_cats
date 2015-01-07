@@ -10,7 +10,7 @@
     </tr>
     <% @cats.each do |cat| %>
       <tr>
-        <td><%= cat.name %><td>
+        <td><a href="<%= cat_url(cat) %>"><%= cat.name %></a><td>
         <td><%= cat.color %><td>
         <td><%= cat.sex %><td>
         <td><%= cat.description %><td>
