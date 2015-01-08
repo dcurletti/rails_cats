@@ -1,8 +1,29 @@
-
 class CatRentalRequest < ActiveRecord::Base
-  validates :end_date, :cat_id, :start_date, presence: true
+  validates :end_date, :user_id, :cat_id, :start_date, presence: true
   validates :status, inclusion: {in: ["PENDING", "APPROVED", "DENIED"], message: "not a valid status"}
   validate :overlapping_approved_requests
+
+  belongs_to(
+    :cat,
+    class_name: "Cat",
+    foreign_key: :cat_id,
+    primary_key: :id
+  )
+
+  has_one(
+    :owner,
+    through: :cat,
+    source: :owner
+  )
+
+  belongs_to(
+  :requester,
+  class_name: :User,
+  foreign_key: :user_id,
+  primary_key: :id
+  )
+
+
 
   def overlapping_requests
     CatRentalRequest.where(cat_id: cat_id).where("id <> ?", id)

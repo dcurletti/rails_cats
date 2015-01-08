@@ -1,0 +1,21 @@
+<h1>Login!</h1>
+
+<div id="name">
+  <form id="form_id" action= "<%= session_url %>" method= "POST" class="navbar-form">
+    <div id="test" class="form-group">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      
+      <label for="user_name">Username:</label>
+      <input class="form-control" type="text" name="user[user_name]" id="user_name" value="<%= @user.user_name %>">
+      <br>
+
+      <label for="password">Password:</label>
+      <input class="form-control" type="text" name="user[password]" id="password" value="<%= @user.password %>">
+      <br>
+
+      <input class="btn btn-primary btn-sm btn-block" type="submit" value="Login">
+    </div>
+  </form>
+
+</div>

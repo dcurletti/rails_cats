@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     end
   end
   root to: "cats#index"
+
+  resources :users , only: [:new, :create, :index, :show]
+  resource :session, only: [:new, :create, :destroy]
 end

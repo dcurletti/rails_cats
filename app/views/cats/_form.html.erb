@@ -9,6 +9,8 @@
 
       <input type="hidden" name="_method" value="<%= form_method %>">
 
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
       <label for="cat_name">Name</label>
       <input class="form-control" type="text" name="cat[name]" id="cat_name" value="<%= @cat.name %>">
       <br>
