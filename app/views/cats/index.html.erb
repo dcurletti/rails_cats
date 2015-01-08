@@ -7,6 +7,7 @@
       <th>Sex<th>
       <th>Description<th>
       <th>Age<th>
+      <th>Owner<th>
     </tr>
     <% @cats.each do |cat| %>
       <tr>
@@ -15,6 +16,7 @@
         <td><%= cat.sex %><td>
         <td><%= cat.description %><td>
         <td><%= cat.age %><td>
+        <td><%= User.find(cat.user_id).user_name %><td>
       </tr>
     <% end %>
   </table class="table">

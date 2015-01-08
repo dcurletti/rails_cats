@@ -10,6 +10,14 @@
   <header>
     <%= render  "layouts/header"%>
   </header>
+
+  <% if flash.now[:errors] %>
+  <% flash.now[:errors].each do |error| %>
+  <%= error %><br />
+  <% end %>
+  <% end %>
+
+
   <main>
     <%= yield %>
   </main>

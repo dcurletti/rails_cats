@@ -1,0 +1,15 @@
+<h1>Hello, <%= @user.user_name %></h1>
+<div class="panel panel-default" id="cat_table">
+  <table class="table">
+    <tr>
+      <th>Name<th>
+      <th>Password Digest<th>
+      <th>Session Token<th>
+    </tr>
+      <tr>
+        <td><a href="<%= user_url(@user) %>"><%= @user.user_name %></a><td>
+        <td><%= @user.password_digest %><td>
+        <td><%= @user.session_token %><td>
+      </tr>
+  </table class="table">
+</div>
